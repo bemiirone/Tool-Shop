@@ -1,6 +1,6 @@
 # Tool Shop
 
-Tool Shop is an Angular-based web application designed to help users manage and purchase tools. It ulitises Signals to manage state
+Tool Shop is an Angular-based web application designed to help users manage and purchase tools. It utilises Signals to manage state
 
 ## Features
 
