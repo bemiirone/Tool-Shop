@@ -1,0 +1,41 @@
+<div>
+  <h2 class="text-xl font-bold mb-4">Shopping Cart</h2>
+  <table class="w-full text-left">
+    <thead>
+      <tr>
+        <th class="border-b-2 p-2">Product</th>
+        <th class="border-b-2 p-2">Quantity</th>
+        <th class="border-b-2 p-2">Subtotal</th>
+        <th class="border-b-2 p-2">Remove?</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of cartService.cartItems(); track item.product) {
+        <tr class="border-b">
+          <td class="p-2">{{ item.product.name }}</td>
+          <td class="p-2">
+            <input
+              type="number"
+              [(ngModel)]="item.quantity"
+              (change)="updateQuantity(item.product.id, item.quantity)"
+              min="1"
+              class="w-16 text-center border rounded"
+            />
+          </td>
+          <td class="p-2">${{ getSubtotal(item.product.id)}}</td>
+          <td class="p-2">
+            <button
+              class="text-red-500"
+              (click)="removeFromCart(item.product.id)"
+            >
+              Remove
+            </button>
+          </td>
+        </tr>
+      }
+      
+    </tbody>
+  </table>
+
+  <p class="mt-4 font-bold">Total: ${{ cartService.totalPrice() }}</p>
+</div>
