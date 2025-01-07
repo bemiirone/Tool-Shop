@@ -48,9 +48,7 @@ export class CartService {
   }
 
   removeFromCart(productId: number): void {
-    const cartItems = this.cartItemsSignal();
-    const updatedItems = cartItems.filter(item => item.product.id !== productId);
-    this.cartItemsSignal.set([...updatedItems]);
+    this.cartItemsSignal.update(item => item.filter(item => item.product.id !== productId));
   }
 
   updateQuantity(productId: number, quantity: number): void {
@@ -59,6 +57,6 @@ export class CartService {
     if (existingItem) {
       existingItem.quantity = quantity;
     }
-    this.cartItemsSignal.set([...cartItems]);
+    this.cartItemsSignal.update(() => [...cartItems]);
   }
 }
