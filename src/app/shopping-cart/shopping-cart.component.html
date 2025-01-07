@@ -4,6 +4,7 @@
     <thead>
       <tr>
         <th class="border-b-2 p-2">Product</th>
+        <th class="border-b-2 p-2">Price</th>
         <th class="border-b-2 p-2">Quantity</th>
         <th class="border-b-2 p-2">Subtotal</th>
         <th class="border-b-2 p-2">Remove?</th>
@@ -12,7 +13,8 @@
     <tbody>
       @for (item of cartService.cartItems(); track item.product) {
         <tr class="border-b">
-          <td class="p-2">{{ item.product.name }}</td>
+            <td class="p-2">{{ item.product.name }}</td>
+            <td class="p-2">£{{ item.product.price }}</td>
           <td class="p-2">
             <input
               type="number"
