@@ -19,7 +19,7 @@ export class AddToCartComponent {
   quantity: number = 1;
    
 
-  addToCart() {
+  addToCart(): void {
     if (this.selectedProduct !== null && this.quantity > 0) {
       this.cartService.addToCart(this.selectedProduct, this.quantity);
       this.quantity = 1;

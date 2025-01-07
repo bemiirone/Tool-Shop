@@ -36,7 +36,7 @@ export class CartService {
     );
   }
 
-  addToCart(product: Product, quantity: number) {
+  addToCart(product: Product, quantity: number): void {
     const cartItems = this.cartItemsSignal();
     const existingItem = cartItems.find(item => item.product.id === product.id);
     if (existingItem) {
@@ -47,13 +47,13 @@ export class CartService {
     this.cartItemsSignal.set([...cartItems]);
   }
 
-  removeFromCart(productId: number) {
+  removeFromCart(productId: number): void {
     const cartItems = this.cartItemsSignal();
     const updatedItems = cartItems.filter(item => item.product.id !== productId);
     this.cartItemsSignal.set([...updatedItems]);
   }
 
-  updateQuantity(productId: number, quantity: number) {
+  updateQuantity(productId: number, quantity: number): void {
     const cartItems = this.cartItemsSignal();
     const existingItem = cartItems.find(item => item.product.id === productId);
     if (existingItem) {
