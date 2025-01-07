@@ -22,6 +22,7 @@ export class AddToCartComponent {
   addToCart() {
     if (this.selectedProduct !== null && this.quantity > 0) {
       this.cartService.addToCart(this.selectedProduct, this.quantity);
+      this.quantity = 1;
     }
   }
 }

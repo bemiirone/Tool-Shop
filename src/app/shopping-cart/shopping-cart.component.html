@@ -22,7 +22,7 @@
               class="w-16 text-center border rounded"
             />
           </td>
-          <td class="p-2">${{ getSubtotal(item.product.id)}}</td>
+          <td class="p-2">£{{ getSubtotal(item.product.id)}}</td>
           <td class="p-2">
             <button
               class="text-red-500"
@@ -37,5 +37,5 @@
     </tbody>
   </table>
 
-  <p class="mt-4 font-bold">Total: ${{ cartService.totalPrice() }}</p>
+  <p class="mt-4 font-bold">Total: £{{ cartService.totalPrice() }}</p>
 </div>

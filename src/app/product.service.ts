@@ -16,6 +16,10 @@ export class ProductService {
     { id: 8, name: 'Mallet', price: 20 },
     { id: 9, name: 'Tape Measure', price: 10 },
     { id: 10, name: 'Square', price: 15 },
+    { id: 11, name: 'Nail Gun', price: 35 },
+    { id: 12, name: 'Circular Saw', price: 40 },
+    { id: 13, name: 'Crowbar', price: 20 },
+    { id: 14, name: 'Nail Gun', price: 30 },
   ];
 
   getProducts() {
