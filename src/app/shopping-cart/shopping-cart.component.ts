@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class ShoppingCartComponent {
   cartService = inject(CartService);
-  cartItems = this.cartService.cartItems();
 
   removeFromCart(productId: number) {
     this.cartService.removeFromCart(productId);
