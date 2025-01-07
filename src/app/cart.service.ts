@@ -18,7 +18,7 @@ export class CartService {
   }
 
   get cartItems() {
-    return this.cartItemsSignal.asReadonly();
+    return this.cartItemsSignal;
   }
 
   get totalPrice() {
