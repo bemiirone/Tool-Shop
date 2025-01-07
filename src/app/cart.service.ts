@@ -44,7 +44,7 @@ export class CartService {
     } else {
       cartItems.push({ product, quantity });
     }
-    this.cartItemsSignal.set([...cartItems]);
+    this.cartItemsSignal.update(() => [...cartItems]);
   }
 
   removeFromCart(productId: number): void {
