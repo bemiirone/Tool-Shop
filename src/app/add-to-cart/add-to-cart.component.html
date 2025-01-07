@@ -1,13 +1,15 @@
 <div class="container mb-4">
   <h1 class="text-2xl">Add to Cart</h1>
 <form class="mb-8" (ngSubmit)="addToCart()">
-  <label for="product" class="block mb-2">Select a product:</label>
   <select id="product" class="border p-2 mb-4" [(ngModel)]="selectedProduct" name="product" required>
+    <option [ngValue]="null" disabled>
+      Select a product
+    </option>
     @for (product of products; track product.id) {
       <option [ngValue]="product">
-        {{ product.name }} - ${{ product.price }}
+        {{ product.name }} - £{{ product.price }}
       </option>
-    }    
+    } 
   </select>
   <label for="quantity" class="block mb-2">Quantity:</label>
   <input id="quantity" type="number" class="border p-2 mb-4 mr-2" [(ngModel)]="quantity" name="quantity" min="1" required>
